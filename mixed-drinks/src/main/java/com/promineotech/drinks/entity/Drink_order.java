@@ -6,9 +6,10 @@ import lombok.Data;
 @Data
 @Builder
 public class Drink_order {
-	private int orderid;
-	private int cocktailid;
-	private int ingredientid;
-	private int spiritsid;
+	
+	private int order_id;
+	private int cocktail_id;
+	private int ingredient_id;
+	private int spirits_id;
 
 }

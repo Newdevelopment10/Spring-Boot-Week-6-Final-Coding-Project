@@ -7,8 +7,8 @@ import lombok.Data;
 @Builder
 public class Cocktails {
 	
-	private int cocktailid;
+	private int cocktail_id;
 	private String cocktail_name;
-	private int spiritsid;
+	private int spirits_id;
 
 }

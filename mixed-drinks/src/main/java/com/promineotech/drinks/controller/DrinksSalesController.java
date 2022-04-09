@@ -4,14 +4,16 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.drinks.entity.Cocktails;
+import com.promineotech.drinks.entity.Drink_order;
+import com.promineotech.drinks.entity.Ingredients;
+import com.promineotech.drinks.entity.Spirits;
 
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -39,10 +41,21 @@ public interface DrinksSalesController {
 	              content = @Content(mediaType = "application/json")),}
 	      )
 	  @GetMapping
-	  @PostMapping(name = HttpStatus.CREATED)
-	  List<Cocktails> createCocktails();
 	  @ResponseStatus(value = HttpStatus.OK)
 	  List<Cocktails> fetchCocktails();
+	  
+	  @GetMapping("/ingredients")
+	  @ResponseStatus(value = HttpStatus.OK)
+	  List<Ingredients> fetchIngredients();
+	  
+	  @GetMapping("/spirits")
+	  @ResponseStatus(value = HttpStatus.OK)
+	  List<Spirits> fetchSpirits();
+	  
+	  @GetMapping("/drink order")
+	  @ResponseStatus(value = HttpStatus.OK)
+	  List<Drink_order> fetchDrinkOrder();
+
 	  //formatter:on
 
 }
